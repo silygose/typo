@@ -44,6 +44,13 @@ Feature: Merge articles
     And I press "Merge"
     Then I should see "joe"
 
+ Scenario: Comments on each of the two original articles need to all carry over and point to the new, merged article.
+    Given I am logged into the admin panel
+    And I am on the admin content page
+    When I follow "first"
+    And I fill in "merge_with" with "1"
+    And I press "Merge"
+
 
  Scenario: The title of the new article should be the title from either one of the merged articles.
     Given I am logged into the admin panel
